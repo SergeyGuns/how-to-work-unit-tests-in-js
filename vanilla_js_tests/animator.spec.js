@@ -1,22 +1,20 @@
 const animatorTest = (Animator) => {
-
-  const blockForTest = {
-    className: 'block block_element'
+  console.log(Animator)
+  const obj = {
+    className : 'block block_1'
   }
+  const animator = new Animator(obj)
+  animator.set(1)
+  console.log(obj)
+  animator.set(2)
+  console.log(obj)
 
-  const animator = new Animator(blockForTest)
+  if (obj.className === 'block block_1 state_2')
+    console.log('OK')
+  else
+    throw 'FAIL звони Сереге'
 
-  animator.set(0)
-  console.log(
-  `expected class "block block_element state_0"
-    blockForTest.className = ${blockForTest.className}`
-    
-  )
-  console.log(`%c test done ${blockForTest.className === "block block_element state_0" ? 'OK':'fail'}`, 'background: #222; color: #bada55')
-  console.log('expected class "block block_element state_0" blockForTest.className = '+ blockForTest.className)
-  animator.set(1)  
-  console.log('blockForTest.className = '+ blockForTest.className)
-
+  
 }
 
 module.exports = {
