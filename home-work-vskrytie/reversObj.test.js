@@ -23,10 +23,8 @@ const revObj = {
       }
     }
   }
-}
+} 
 
 
 
-test('reversObj test', () => {
-  expect(reversObj(obj)).toEqual(reversObj(revObj))
-})
+console.log(JSON.stringify(reversObj(obj),null,'  '))
