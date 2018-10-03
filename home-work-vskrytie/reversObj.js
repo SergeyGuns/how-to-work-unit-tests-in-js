@@ -1,5 +1,25 @@
+function reversObj(obj, curr) {
+
+  if (obj.next) {
+    const next = reversObj(obj.next, obj)
+    obj.next = curr
+    return next
+  }
+
+  obj.next = curr
+  return obj
+}
+
+function reversObj(obj) {
+  if (!obj || !obj.next) return obj;
+
+  let tmp = reversObj(obj.next);
+  obj.next.next = obj;
+  delete obj.next;
+  return tmp;
+}
 var reversObj = function(node, parent) {
-  console.log(node, parent)
+  // console.log(node, parent)
   var result = parent || {};
   
   if (node) {
@@ -12,27 +32,27 @@ var reversObj = function(node, parent) {
   return result;
 }
 
-// var reversObj = function(head) {
-//   var result = null;
-//   var stack = [];
+var reversObj = function(head) {
+  var result = null;
+  var stack = [];
   
-//   var current = head;
-//   while (current) {
-//       stack.push(current);
-//       current = current.next;
-//   }
+  var current = head;
+  while (current) {
+      stack.push(current);
+      current = current.next;
+  }
   
-//   // Set head to end of list.
-//   result = stack.pop() || [];
-//   current = result;
+  // Set head to end of list.
+  result = stack.pop() || [];
+  current = result;
   
-//   while (current) {
-//       current.next = stack.pop();
-//       current = current.next;
-//   }
+  while (current) {
+      current.next = stack.pop();
+      current = current.next;
+  }
 
-//   return result;
-// };
+  return result;
+};
 
 
 module.exports = {

@@ -4,7 +4,8 @@
   "description": "unit test example for js",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon home-work-vskrytie-2/brackets.js"
   },
   "repository": {
     "type": "git",
