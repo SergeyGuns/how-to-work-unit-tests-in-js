@@ -18,7 +18,8 @@ function reversObj(obj) {
   delete obj.next;
   return tmp;
 }
-var reversObj = function(node, parent) {
+
+function reversObj(node, parent) {
   // console.log(node, parent)
   var result = parent || {};
   
