@@ -30,14 +30,14 @@ console.log(brackets(str7), '===', false)
 console.log(brackets(str8), '===', false)
 
 // Anton
-// function brackets(str) {
-//   let reg = str.replace(/\(\)/g, '').replace(/\[\]/g, '').replace(/{}/g, '');
-//   if (reg.match(/\(\)/i) || reg.match(/\[\]/i) || reg.match(/{}/i)) {
-//     return brackets(reg);
-//   } else if (reg.length == 0) {
-//     return true;
-//   } else return false;
-// }
+function brackets(str) {
+  let reg = str.replace(/\(\)/g, '').replace(/\[\]/g, '').replace(/{}/g, '');
+  if (reg.match(/\(\)/i) || reg.match(/\[\]/i) || reg.match(/{}/i)) {
+    return brackets(reg);
+  } else if (reg.length == 0) {
+    return true;
+  } else return false;
+}
 
 // Artem
 // function brackets(str) {
