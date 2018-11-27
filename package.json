@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon home-work-vskrytie-2/brackets.js"
+    "start": "nodemon --experimental-modules  home-work-nodejs-fs/index.mjs"
   },
   "repository": {
     "type": "git",
