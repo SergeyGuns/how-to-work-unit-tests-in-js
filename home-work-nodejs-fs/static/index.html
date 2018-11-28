@@ -45,9 +45,10 @@
     }
 
     function getData(query, cb) {
-      fetch('/json?query=' + query).then((res) => res.json())
-        .then(data => cb(data))
-        .then(data => console.log(data))
+      fetch('/api?query=' + query)
+        .then(data => data.json())
+        .then(json => cb(json))
+        .then(json => console.log(json))
     }
   </script>
 

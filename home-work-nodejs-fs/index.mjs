@@ -22,7 +22,7 @@ http.createServer((request,response)=>{
     response.end(fs.readFileSync('./home-work-nodejs-fs/static/index.html'))
   }
 
-  if(~url.pathname.indexOf('/json')) {
+  if(~url.pathname.indexOf('/api')) {
     console.log(url.pathname)
     response.writeHead(200, {
       'Content-Type': 'application/json'
