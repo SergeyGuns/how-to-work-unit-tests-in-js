@@ -14,13 +14,26 @@
 
   </div>
   <script>
-    document.querySelector('.input-text').addEventListener('input', handleInputChange)
+    const input = document.querySelector('.input-text')
+    input.addEventListener('input', handleInputChange)
     const resultNode = document.querySelector('.res')
+
+    document.addEventListener('click', function(ev){
+      if(ev.target.dataset.citi) {
+        handleInputSetValue(input)(ev)
+      }
+    })
+
+    function handleInputSetValue(input) {
+      return function(ev) {
+        input.value = ev.target.dataset.citi
+      }
+    }
 
     function wrireResNode(resNode) {
       return function(data) {
         resNode.innerHTML = data.map( citi => `
-          <div> ${citi.name} </div>
+          <div data-citi='${citi.name}'> ${citi.name} </div>
         `).join('')
         return data;
       }
